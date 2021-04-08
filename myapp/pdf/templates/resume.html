@@ -5,10 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Resume</title>
+       <style>
+    @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+.timeline {
+  max-width: 540px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+ margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 18px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+
+
+.line {
+  padding: 10px 90px;
+  position: relative;
+
+}
+
+.line::before {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+
+  background-color: #194350;
+  content: "";
+}
+
+.line .content {
+  position: relative;
+  padding-left: 30px;
+}
+
+.line .content + .content {
+  
+}
+
+.line .content h1 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.line .content p {
+  font-size: 14px;
+}
+
+.line .content::before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #194350;
+  content: "";
+  left: -9px;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=main.css.map */
+    </style>
 </head>
 <body>
-<h2>{{user_profile.name}}</h2>
+ {% comment %} <h2>{{user_profile.name}}</h2>
 <h2>{{user_profile.phone}}</h2>
 <h2>{{user_profile.email}}</h2>
 <hr>
@@ -17,6 +93,67 @@
 <p>Education</p>
 <ul>
 <li>{{user_profile.degree}} from {{user_profile.university}}</li>
-</ul>
+</ul>  {% endcomment %}
+
+
+
+
+<div class="container-fluid" style=" background-color: #194350; color: white;padding: 30px">
+  <p>{{user_profile.phone}}<p>
+  <p>{{user_profile.email}}</p>
+  <h1>{{user_profile.name}}</h1>           
+</div>
+    
+<div class="container-fluid" style="margin-top: 10px;padding: 30px">
+  <h4><strong>About Me</strong></h4>
+    <hr style="height: 5px;color:black">
+   <p>{{user_profile.about_you}}</p>
+    
+     <h4><strong>Skills</strong></h4>
+      <hr style="height: 5px;color:black">
+     <p>{{user_profile.skill}}</p>
+    
+     <h4><strong>Education</strong></h4>
+      <hr style="height: 5px;color:black">
+         
+<div class="timeline">
+  
+
+   <div class="line">
+     <div class="line-content">
+
+       <div class="content">
+         <h1>{{user_profile.degree}}</h1>
+         <p>{{user_profile.university}}</p>
+       </div>
+
+     
+     </div>
+   </div>
+ </div>
+    
+    
+     <h4><strong>Experiance</strong></h4>
+    <hr style="height: 5px;color:black">
+    <div class="timeline">
+  
+
+   <div class="line">
+     <div class="line-content">
+
+       <div class="content">
+         <h1>work Experiance</h1>
+         <p>{{user_profile.previous_works}}</p>
+       </div>
+
+     
+     </div>
+   </div>
+ </div>
+    
+</div> 
+    
+    
+
 </body>
 </html>

@@ -44,3 +44,8 @@ def resume(request, id):
     return response
 
     # return render(request,"resume.html",{'user_profile':user_profile})
+
+
+def list(request):
+    profile = Profile.objects.all()
+    return render(request,"list.html",{'profile':profile})

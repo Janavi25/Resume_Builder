@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <title>Resume</title>
+</head>
+<body>
+<div class="container">
+<div class="row m-5">
+    <div class="col-md-12">
+        <h2 style="text-align:center;">CV Database profile list</h2>
+    </div>
+
+    {% comment %} {% for profile in profile %}
+    <div class="row">
+        <div class="col-md-6">
+            {{profile.name}}
+        </div>
+        <div class="col-md-6">
+            <a href="/{{profile.id}}" class="btn btn-warning">Download cv</a>
+        </div>
+
+    </div>
+    <hr>
+    {% endfor %} {% endcomment %}
+</div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+          
+            <th scope="col">Name</th>
+            <th scope="col">Resume</th>
+           
+          </tr>
+        </thead>
+        {% for profile in profile %}
+        <tbody>
+          
+          
+          <tr>
+           
+            <td> {{profile.name}}</td>
+          
+            <td>
+               <a href="/{{profile.id}}" class="btn btn-warning">Download cv</a>
+            
+            </td>
+          </tr>
+        </tbody>
+         {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
