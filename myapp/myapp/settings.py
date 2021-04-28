@@ -57,7 +57,7 @@ ROOT_URLCONF = 'myapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'C:/Users/janav/OneDrive/Desktop/python/Django/Resume_Builder/myapp/pdf/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -11,5 +11,6 @@ class Profile(models.Model):
     skill = models.TextField(max_length=1000)
     about_you = models.TextField(max_length=1000)
     previous_works = models.TextField(max_length=1000)
+    previous_works_1 = models.TextField(max_length=1000)
     
    

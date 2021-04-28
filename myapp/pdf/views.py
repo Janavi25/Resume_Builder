@@ -21,9 +21,10 @@ def accept(request):
         skill = request.POST.get("skill", "")
         about_you = request.POST.get("about_you", "")
         previous_works = request.POST.get("previous_works", "")
+        previous_works_1 = request.POST.get("previous_works_1", "")
 
         profile = Profile(name=name, phone=phone, email=email, school=school, degree=degree,
-                          university=university, skill=skill, about_you=about_you, previous_works=previous_works)
+                          university=university, skill=skill, about_you=about_you, previous_works=previous_works,previous_works_1=previous_works_1)
         profile.save()
     return render(request, "accept.html")
 
@@ -49,3 +50,9 @@ def resume(request, id):
 def list(request):
     profile = Profile.objects.all()
     return render(request,"list.html",{'profile':profile})
+
+
+def index(request):  
+   template = loader.get_template('index.html') # getting our template  
+   return HttpResponse(template.render())       # rendering the template in HttpResponse  
+

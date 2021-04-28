@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
-    <title>Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <style>
- * {
+    * {
         box-sizing: border-box;
         padding: 0;
         margin: 0;
@@ -107,7 +109,77 @@
             color: rgba(255, 255, 255, 1);
         }
     }
-     .btn {
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        background-color: #fff;
+        padding: 10px;
+
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        /* border: 1px solid rgba(0, 0, 0, 0.8); */
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .head {
+        overflow: hidden;
+        box-sizing: content-box;
+        width: 500px;
+        text-align: start;
+        font-size: 50px;
+        line-height: 60px;
+        font-family: Helvetica, sans-serif;
+        max-lines: 3;
+        margin-top: 60px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #46464e;
+    }
+
+    span {
+        font-size: 20px;
+        line-height: 30px;
+        font-family: sans-serif;
+        font-weight: normal;
+    }
+
+    .button {
+        background-color: #c64756;
+        border: none;
+        color: white;
+        padding: 2px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 5px;
+
+
+    }
+
+    .button:hover {
+        background-color: #c64756;
+        border: none;
+        color: white;
+        padding: 2px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 5px;
+        cursor: pointer;
+
+    }
+
+    .btn {
         background-color: #c64756;
         border: none;
         color: white;
@@ -137,9 +209,34 @@
         cursor: pointer;
     }
 
+    .bg {
+        background-image: url('https://cdn-images.zety.com/pages/how_to_write_web_developer_resume.jpg');
+        width: 100%;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: relative;
+       
 
-    
-        
+    }
+
+    #color-overlay {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        background-color: #314e52;
+        opacity: 0.6;
+    }
+
+
+    * {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
 .pg-footer {
   font-family: 'Roboto', sans-serif;
 }
@@ -441,6 +538,7 @@
 }
 
 </style>
+
 <body>
 
     <nav class="navbar">
@@ -454,7 +552,7 @@
             <li>
                 <a href="http://127.0.0.1:8000/index/#" class="nav-links">Home</a>
             </li>
-          
+           
             <li>
                 <a href="http://127.0.0.1:8000/list/" class="nav-links">Downloads</a>
             </li>
@@ -464,63 +562,60 @@
         </ul>
     </nav>
 
-<div class="container">
-<div class="row m-5">
-    <div class="col-md-12">
-        <h2 style="text-align:center;">profile list</h2>
-    </div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="head container">
+                <p>
+                    Make a Persuasive Resume in Just Minutes
+                </p>
+                <p>
+                    <span> Answer a few questions about your background, skills and experience.Our Resume Builder does
+                        the rest. Start today for free!</span>
+                </p>
+                <a href="http://127.0.0.1:8000/" class="button">BUILD MY RESUME</a>
+            </div>
 
-    {% comment %} {% for profile in profile %}
-    <div class="row">
-        <div class="col-md-6">
-            {{profile.name}}
         </div>
-        <div class="col-md-6">
-            <a href="/{{profile.id}}" class="btn btn-warning">Download cv</a>
+        <div class="grid-item">
+            <div class="container">
+                <img src="https://firebasestorage.googleapis.com/v0/b/janavi25preaload.appspot.com/o/resume.png?alt=media&token=0b1104d3-5500-46b6-801e-c99fa9cec5c9"
+                    width="500px">
+            </div>
         </div>
 
     </div>
-    <hr>
-    {% endfor %} {% endcomment %}
-</div>
-</div>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-          
-            <th scope="col">Name</th>
-            <th scope="col">Resume</th>
-           
-          </tr>
-        </thead>
-        {% for profile in profile %}
-        <tbody>
-          
-          
-          <tr>
-           
-            <td> {{profile.name}}</td>
-          
-            <td>
-               <a href="/{{profile.id}}" class="btn btn-warning">Download cv</a>
-            
-            </td>
-          </tr>
-        </tbody>
-         {% endfor %}
-      </table>
+    <div class="bg">
+        <div id="color-overlay"></div>
+      
     </div>
-  </div>
-</div>
-</div>
-</div>
-<br><br><br>
+    <br><br>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="container">
+                <img src="https://firebasestorage.googleapis.com/v0/b/janavi25preaload.appspot.com/o/%E2%80%94Pngtree%E2%80%94recruitment%20search%20find%20human%20resource_5493705.png?alt=media&token=de16dc7e-85a9-41fa-bd57-5bd04c097d47"
+                    width="250px">
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="head">
+               
+                <p>
+                    <span> Resume Builds Resume Builder is the tool for anyone who wants to create a professional, head-turning resume while saving time and money. All it takes is a few clicks and 5 minutes to set yourself apart from the competition and score the interview!</span>
+                </p>
+             
+            </div>
 
+        </div>
+       
+
+    </div>
+
+
+
+ <!-- <p class="container" style="font-size: 25px;">Resume Builds Resume Builder is the tool for anyone who wants to create a professional, head-turning resume while saving time and money. All it takes is a few clicks and 5 minutes to set yourself apart from the competition and score the interview!</p> -->
+    <br><br><br>
+ 
  <div class="pg-footer">
         <footer class="footer">
           <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
@@ -600,4 +695,5 @@
         </footer>
       </div>
 </body>
+
 </html>
